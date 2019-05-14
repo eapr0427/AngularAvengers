@@ -8,14 +8,21 @@
     </div>
     <div class="col-md-6">
       <button (click)="GuardarPoder(txtPoder.value)" class="btn btn-info">
-          Guardar Poder
-        </button>
+        Guardar Poder
+      </button>
     </div>
-   
+
   </div>
-  <table>
-    <tr *ngFor="let poder of lPoder;let indice = index">
-      <td>{{indice+1}}</td>
-      <td>{{poder.nombre}}</td>
-    </tr>
-  </table>
+  <p>
+    <table class="table table-dark">
+      <thead class="thead-light"> 
+        <th scope="col">#</th>
+        <th scope="col">Poder</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let poder of lPoder;let indice = index">
+          <td>{{indice+1}}</td>
+          <td>{{poder.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>

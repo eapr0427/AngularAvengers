@@ -8,8 +8,8 @@ import { Poder } from 'src/models/Poder';
 })
 export class AdminPoderComponent implements OnInit {
 
-//  lPoder : Poder[] = [];
-textopoder = ' ';
+  lPoder: Poder[] = [];
+  textopoder = ' ';
   constructor() { }
 
   ngOnInit() {
@@ -17,28 +17,26 @@ textopoder = ' ';
     //console.log(poderes);
   }
 
-  GuardarPoder(nombre : any)
-  {
+  GuardarPoder(nombre: any) {
 
-   // this.lPoder.push(new Poder(nombre));
+    this.lPoder.push(new Poder(nombre));
     //console.log(this.lPoder);
     let poderes = [];
     let jsondata = localStorage.getItem("poder");
-    if(jsondata)
-    {
+    if (jsondata) {
       poderes = JSON.parse(jsondata);
-    }   
+    }
     poderes.push(new Poder(nombre));
     this.GrabarLocalStorage(poderes);
   }
 
-  GrabarLocalStorage(poderes : any){
-    
-    //this.lPoder.push(poderes);
+  GrabarLocalStorage(poderes: any) {
+
+   // this.lPoder.push(poderes);
 
     //poderes.push(new Poder(nombre));
-     // console.log(this.lPoder);
-    localStorage.setItem("poder",  JSON.stringify(poderes));
+    // console.log(this.lPoder);
+    localStorage.setItem("poder", JSON.stringify(poderes));
     this.textopoder = ' ';
   }
 
