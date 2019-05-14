@@ -13,8 +13,8 @@ textopoder = ' ';
   constructor() { }
 
   ngOnInit() {
-    let poderes = JSON.parse(localStorage.getItem("poder"));
-    console.log(poderes);
+    //let poderes = JSON.parse(localStorage.getItem("poder"));
+    //console.log(poderes);
   }
 
   GuardarPoder(nombre : any)
