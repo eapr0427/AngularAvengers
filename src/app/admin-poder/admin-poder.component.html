@@ -1,0 +1,21 @@
+<h4>
+  Administrador de Poderes
+</h4>
+<p>
+  <div class="row">
+    <div class="col-md-6">
+      <input #txtPoder type="text" name="txtPoder" placeholder="Ingrese Poder" [value]="textopoder" class="input-group">
+    </div>
+    <div class="col-md-6">
+      <button (click)="GuardarPoder(txtPoder.value)" class="btn btn-info">
+          Guardar Poder
+        </button>
+    </div>
+   
+  </div>
+  <table>
+    <tr *ngFor="let poder of lPoder;let indice = index">
+      <td>{{indice+1}}</td>
+      <td>{{poder.nombre}}</td>
+    </tr>
+  </table>

@@ -1,0 +1,33 @@
+<h4>Administrar vengador</h4>
+<div class="form-horizontal">
+  <div class="row">
+    <div class="col-md-8">
+      <label for="txtNombre" class="control-label">Ingrese Nombre del Vengador</label>
+    </div>
+    <div class="col-md-4">
+      <input #txtNombre type="text" name="txtNombre" placeholder="Ingrese Nombre">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <label for="txtNombre" class="control-label">Seleccione poder</label>
+    </div>
+    <div class="col-md-4">
+      <select #ddlPoder name="selectedPoder" [ngModel]="lPoder" placeHolder="Poder_" (change)="selectchange($event)">
+        <option value="none" ng-selected="selected">Seleccionar Poder</option>
+        <option *ngFor="let Poder of lPoder" [ngValue]="Poder.nombre">
+          {{Poder.nombre}}
+
+        </option>
+
+      </select>
+    </div>
+  </div>
+
+  <br>
+  <div class="col text-center">
+    <button (click)="GuardarVengador(txtNombre.value)" class="btn btn-info">
+      Guardar
+    </button>
+  </div>
+</div>
