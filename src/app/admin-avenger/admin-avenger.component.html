@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-4">
       <select #ddlPoder name="selectedPoder" [ngModel]="lPoder" placeHolder="Poder_" (change)="selectchange($event)">
-        <option value="none" ng-selected="selected">Seleccionar Poder</option>
+        <option value="none" selected="selected">Seleccionar Poder</option>
         <option *ngFor="let Poder of lPoder" [ngValue]="Poder.nombre">
           {{Poder.nombre}}
 

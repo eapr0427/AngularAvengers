@@ -10,9 +10,9 @@ import { Poder } from 'src/models/Poder';
 export class AdminAvengerComponent implements OnInit {
 
   lPoder: Poder[] = [];
-  Vengador : Personaje;
-  
-  constructor() { 
+  Vengador: Personaje;
+
+  constructor() {
 
     //this.ObtenerLocalStorage();
 
@@ -21,29 +21,27 @@ export class AdminAvengerComponent implements OnInit {
   ngOnInit() {
     this.ObtenerLocalStorage();
     // this.lPoder.push(new Poder("Volar"));
-     //this.lPoder.push(new Poder("Fuerza"));
-     //console.log(this.lPoder);
+    //this.lPoder.push(new Poder("Fuerza"));
+    //console.log(this.lPoder);
   }
 
-  ObtenerLocalStorage()
-  {
-    let poderes = JSON.parse(localStorage.getItem("poder"));
-    if(poderes != null){
-              poderes.forEach((x) => {
-                console.log(x);
-                this.lPoder.push(new Poder(x.nombre));
-            } );
-          }
+  ObtenerLocalStorage() {
+    this.lPoder = JSON.parse(localStorage.getItem("poder"));
+    // if (poderes != null) {
+    //   poderes.forEach((x) => {
+    //     //console.log(x);
+    //     this.lPoder.push(new Poder(x.nombre));
+    //   });
+    // }
   }
 
 
-  GuardarVengador(nombre: any){
-    this.Vengador = new Personaje(nombre,this.lPoder);
+  GuardarVengador(nombre: any) {
+    this.Vengador = new Personaje(nombre, this.lPoder);
     console.log(this.Vengador);
   }
 
-  selectchange($event)
-  {
+  selectchange($event) {
     console.log($event, $event.target, $event.currentTarget);
   }
 }
